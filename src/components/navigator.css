@@ -1,0 +1,19 @@
+.navigator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 2rem;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 1rem;
+}

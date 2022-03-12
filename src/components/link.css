@@ -1,0 +1,12 @@
+.link--primary {
+  text-decoration: none;
+  color: red;
+}
+
+.link--secondary {
+  text-decoration: none;
+}
+
+a.link--hover:hover {
+  background-color: rgb(237, 237, 237);
+}
