@@ -128,3 +128,8 @@ yarn-error.log*
 
 #MacOS
 .DS_Store
+
+#Storybook
+storybook-static
+
+

@@ -18,7 +18,7 @@ function App() {
         onLogout={() => {}}
         onCreateAccount={() => {}}
       />
-      <Navigator menuItems={menu} />
+      <Navigator />
     </div>
   );
 }
