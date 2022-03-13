@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button } from "./Button";
 import "./header.css";
-import Logo from "logo.svg";
+import Logo from "assets/logo.svg";
 
 type User = {
   name: string;

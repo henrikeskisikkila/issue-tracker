@@ -20,8 +20,10 @@ export const Link = ({
   const mode = primary ? "link--primary" : "link--secondary";
   const hoverable = hover ? "link--hover" : null;
   return (
-    <a href={link} className={`${mode} ${hoverable}`} {...props}>
-      {label}{" "}
-    </a>
+    <div className={"link"}>
+      <a href={link} className={`${mode} ${hoverable}`} {...props}>
+        {label}{" "}
+      </a>
+    </div>
   );
 };

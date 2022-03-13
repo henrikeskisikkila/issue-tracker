@@ -1,11 +1,16 @@
 import React from "react";
 import { Header } from "./components/Header";
 import { Navigator } from "./components/Navigator";
+import { Dialog } from "components/Dialog";
 import "./App.css";
 
 const menu = [
   {
-    text: "menu item 1",
+    text: "Issues",
+    link: "#",
+  },
+  {
+    text: "Issues",
     link: "#",
   },
 ];
@@ -18,7 +23,10 @@ function App() {
         onLogout={() => {}}
         onCreateAccount={() => {}}
       />
-      <Navigator />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Navigator menuItems={menu} />
+        <Dialog isOpen={true} />
+      </div>
     </div>
   );
 }

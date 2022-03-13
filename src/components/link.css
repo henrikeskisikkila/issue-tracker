@@ -1,11 +1,24 @@
+.link {
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 0;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.link a {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  font-weight: 700;
+}
+
+.link:hover {
+  background-color: rgb(246, 246, 246);
+}
+
 .link--primary {
   text-decoration: none;
 }
 
 .link--secondary {
   text-decoration: none;
-}
-
-a.link--hover:hover {
-  background-color: rgb(237, 237, 237);
 }

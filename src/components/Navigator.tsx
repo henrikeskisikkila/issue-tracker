@@ -10,7 +10,7 @@ type menuItem = {
 };
 
 interface NavigatorProps {
-  menuItems?: [menuItem];
+  menuItems: menuItem[];
   // user?: User;
   // onLogin: () => void;
   // onLogout: () => void;
@@ -21,9 +21,9 @@ export const Navigator = ({ menuItems }: NavigatorProps) => (
   <header>
     <div className="navigator">
       <ul className="menu">
-        {menuItems?.map((item) => (
+        {menuItems.map((item) => (
           <li key={item.text}>
-            <Link label={item.text} link={item.link} />
+            <Link label={item.text} link={item.link} hover={true} />
           </li>
         ))}
       </ul>

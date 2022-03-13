@@ -23,6 +23,10 @@ Medium.args = {
       text: "nav 1",
       link: "#",
     },
+    {
+      text: "nav 2",
+      link: "#",
+    },
   ],
 };
 
