@@ -1,30 +1,24 @@
 import React from "react";
 
-enum Direction {
-  row,
-  column,
-}
-
 interface StackProps {
-  children: React.ReactNode;
-  direction: Direction;
-  wrap: boolean;
-  spacing: number;
+  children?: React.ReactNode;
+  direction?: "row" | "column";
+  wrap?: "wrap" | "nowrap";
+  spacing?: number;
 }
 
 export const Stack = ({
-  children,
-  direction = Direction.row,
-  wrap = false,
+  children = null,
+  direction = "row",
+  wrap = "wrap",
   spacing = 2,
 }: StackProps) => {
-  const style = {
+  const style2 = {
     display: "flex",
     gap: `${spacing * 0.3}rem`,
-    flexWrap: "wrap" || null,
-    // flexWrap: wrap ? "wrap" : "nowrap",
-    // flexDirection: direction.valueOf() === Direction.row ? "row" : "column",
+    flexWrap: wrap,
+    flexDirection: direction,
   };
 
-  return <div style={style}>{children}</div>;
+  return <div style={style2}>{children}</div>;
 };
