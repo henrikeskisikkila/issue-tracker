@@ -1,4 +1,6 @@
 .dialog {
+  display: block;
+  overflow: auto;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -6,11 +8,9 @@
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  width: 300px;
-  height: 200px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgb(246, 246, 246);
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .dialog.hidden {

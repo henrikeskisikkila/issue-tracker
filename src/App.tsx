@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "./components/Header";
 import { Navigator } from "./components/Navigator";
+import { LoginDialog } from "components/LoginDialog";
 import { Dialog } from "components/Dialog";
 import "./App.css";
 
@@ -25,7 +26,7 @@ function App() {
       />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menuItems={menu} />
-        <Dialog isOpen={true} />
+        <LoginDialog open={true} />
       </div>
     </div>
   );

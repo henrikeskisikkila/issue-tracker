@@ -1,11 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import "./dialog.css";
 import { Button } from "components/Button";
+
 interface DialogProps {
-  isOpen: boolean;
+  isOpen?: boolean;
+  showDismiss?: boolean;
 }
 
-export const Dialog = ({ isOpen }: DialogProps) => {
+export const Dialog: React.FC<DialogProps> = ({
+  isOpen = false,
+  showDismiss = false,
+  children,
+}) => {
   const [open, setOpen] = React.useState(isOpen);
 
   React.useEffect(() => {
@@ -14,7 +20,10 @@ export const Dialog = ({ isOpen }: DialogProps) => {
 
   return (
     <div className={`dialog ${open ? "" : "hidden"}`}>
-      <Button size="small" onClick={() => setOpen(false)} label="Close" />
+      {showDismiss ? (
+        <Button size="small" onClick={() => setOpen(false)} label="Close" />
+      ) : null}
+      {children}
     </div>
   );
 };
