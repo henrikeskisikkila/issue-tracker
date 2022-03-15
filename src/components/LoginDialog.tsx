@@ -28,7 +28,7 @@ export const LoginDialog: React.FC<LoginDialogProps> = ({ open }) => {
           <img src={Logo} alt="Log" />
           <h1>Issue Tracker</h1>
         </div>
-        <h3>Login</h3>
+        <p>Login</p>
         <Input
           type="text"
           placeholder="Email"
