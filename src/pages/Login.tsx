@@ -1,5 +1,5 @@
-import { LoginDialog } from "components/LoginDialog";
+import { AuthDialog } from "components/AuthDialog";
 
 export const Login = () => {
-  return <LoginDialog open={true} />;
+  return <AuthDialog open={true} header={"Login"} />;
 };

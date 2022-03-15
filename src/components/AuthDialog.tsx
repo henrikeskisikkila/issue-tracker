@@ -6,11 +6,12 @@ import { Button } from "components/Button";
 import { Input } from "components/Input";
 import { Link } from "components/Link";
 
-interface LoginDialogProps {
+interface AuthDialogProps {
   open: boolean;
+  header?: string;
 }
 
-export const LoginDialog: React.FC<LoginDialogProps> = ({ open }) => {
+export const AuthDialog: React.FC<AuthDialogProps> = ({ open, header }) => {
   const login = () => {
     console.log("login");
   };
@@ -28,7 +29,7 @@ export const LoginDialog: React.FC<LoginDialogProps> = ({ open }) => {
           <img src={Logo} alt="Log" />
           <h1>Issue Tracker</h1>
         </div>
-        <p>Login</p>
+        <p>{header ? header : null}</p>
         <Input
           type="text"
           placeholder="Email"
@@ -44,7 +45,11 @@ export const LoginDialog: React.FC<LoginDialogProps> = ({ open }) => {
           }}
         />
         <Button size="small" primary={true} onClick={login} label="Login" />
-        <Link primary={true} label={"Create an account"} link={"/signup"} />
+        <Link
+          primary={true}
+          label={"Create an account"}
+          link={"/createaccount"}
+        />
       </Stack>
     </Dialog>
   );
