@@ -1,7 +1,5 @@
 # Getting Started with Issue Track App
 
-This is Issue Track App.
-
 ## Available Scripts
 
 In the project directory, you can run:
