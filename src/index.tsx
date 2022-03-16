@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { Login } from "pages/Login";
 import { CreateAccount } from "pages/CreateAccount";
+import { Project } from "pages/Project";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/createaccount" element={<CreateAccount />} />
+        <Route path="/project/:id" element={<Project />} />
       </Routes>
     </Router>
   </React.StrictMode>,
