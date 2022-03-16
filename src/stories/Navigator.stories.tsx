@@ -18,14 +18,21 @@ const Template: ComponentStory<typeof Navigator> = (args) => (
 
 export const Medium = Template.bind({});
 Medium.args = {
-  menuItems: [
+  menu: [
     {
-      text: "nav 1",
-      link: "#",
-    },
-    {
-      text: "nav 2",
-      link: "#",
+      item: {
+        label: "Projects",
+      },
+      subItems: [
+        {
+          label: "Project 1",
+          link: "#",
+        },
+        {
+          label: "Project 2",
+          link: "#",
+        },
+      ],
     },
   ],
 };

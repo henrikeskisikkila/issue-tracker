@@ -15,3 +15,20 @@
   margin: 0;
   padding: 0;
 }
+
+.menu-header {
+  color: #1ea7fd;
+  padding: 1rem 1rem 1rem 1rem;
+  font-weight: 700;
+}
+
+.menu-subitem {
+  padding-left: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+.menu-subitem a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}

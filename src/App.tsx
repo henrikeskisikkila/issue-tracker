@@ -5,12 +5,26 @@ import "./App.css";
 
 const menu = [
   {
-    text: "Issues",
-    link: "#",
+    item: {
+      label: "Projects",
+    },
+    subItems: [
+      {
+        label: "Project 1",
+        link: "#",
+      },
+      {
+        label: "Project 2",
+        link: "#",
+      },
+    ],
   },
   {
-    text: "Issues",
-    link: "#",
+    item: {
+      label: "Settings",
+      link: "#",
+    },
+    subItems: [],
   },
 ];
 
@@ -24,7 +38,7 @@ function App() {
         onCreateAccount={() => {}}
       />
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Navigator menuItems={menu} />
+        <Navigator menu={menu} />
       </div>
     </div>
   );

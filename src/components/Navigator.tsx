@@ -1,31 +1,52 @@
-import React from "react";
-
-// import { Button } from './Button';
 import { Link } from "./Link";
 import "./navigator.css";
 
-type menuItem = {
-  text: string;
-  link: string;
+type Item = {
+  label: string;
+  link?: string;
+};
+
+type Menu = {
+  item: Item;
+  subItems?: Item[];
 };
 
 interface NavigatorProps {
-  menuItems: menuItem[];
+  menu: Menu[];
   // user?: User;
   // onLogin: () => void;
   // onLogout: () => void;
   // onCreateAccount: () => void;
 }
 
-export const Navigator = ({ menuItems }: NavigatorProps) => (
+const submenu = (item: Item, subItems: Item[]) => {
+  return (
+    <>
+      <li className="menu-header">{item.label}</li>
+      {subItems.map((item) => (
+        <li className="menu-subitem">
+          <a href={item.link}>{item.label}</a>
+        </li>
+      ))}
+    </>
+  );
+};
+
+export const Navigator = ({ menu }: NavigatorProps) => (
   <header>
     <div className="navigator">
       <ul className="menu">
-        {menuItems.map((item) => (
-          <li key={item.text}>
-            <Link label={item.text} link={item.link} hover={true} />
-          </li>
-        ))}
+        {menu.map((menuItem) =>
+          menuItem.subItems ? (
+            submenu(menuItem.item, menuItem.subItems)
+          ) : (
+            <Link
+              label={menuItem.item.label}
+              link={menuItem.item?.link || ""}
+              hover={true}
+            />
+          )
+        )}
       </ul>
     </div>
   </header>
