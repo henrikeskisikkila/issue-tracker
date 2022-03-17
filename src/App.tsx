@@ -31,12 +31,7 @@ const menu = [
 function App() {
   return (
     <div>
-      <Header
-        user={{ name: "User" }}
-        onLogin={() => {}}
-        onLogout={() => {}}
-        onCreateAccount={() => {}}
-      />
+      <Header user={{ name: "User" }} onLogout={() => {}} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
       </div>

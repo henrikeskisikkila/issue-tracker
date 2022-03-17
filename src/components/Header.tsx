@@ -10,17 +10,10 @@ type User = {
 
 interface HeaderProps {
   user?: User;
-  onLogin: () => void;
   onLogout: () => void;
-  onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+export const Header = ({ user, onLogout }: HeaderProps) => (
   <header>
     <div className="wrapper">
       <div>

@@ -12,12 +12,7 @@ export const Page: React.VFC = () => {
 
   return (
     <article>
-      <Header
-        user={user}
-        onLogin={() => setUser({ name: "Jane Doe" })}
-        onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: "Jane Doe" })}
-      />
+      <Header user={user} onLogout={() => setUser(undefined)} />
 
       <section>
         <h2>Pages in Storybook</h2>
