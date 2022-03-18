@@ -2,6 +2,7 @@ import { Header } from "components/Header";
 import { Navigator } from "components/Navigator";
 import { Card } from "components/Card";
 import { Stack } from "components/Stack";
+import { StatusButton } from "components/StatusButton";
 import "./project.css";
 import { issues } from "data/issues.js";
 
@@ -50,15 +51,17 @@ export const Project = () => {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
         <div className="project">
-          <h3>Issues</h3>
+          <h3 className="header">Issues</h3>
           {issues.map((issue) => (
             <Card>
               <Stack direction="row" justifyContent="space-between">
                 <h3>{issue.title}</h3>
-                <small>{formatDate(issue.createdAt)}</small>
+                <small>Created: {formatDate(issue.createdAt)}</small>
               </Stack>
               <p>{issue.content}</p>
-              <p>{issue.status}</p>
+              <p>
+                <StatusButton issueId={issue.id} status={issue.status} />
+              </p>
             </Card>
           ))}
         </div>
