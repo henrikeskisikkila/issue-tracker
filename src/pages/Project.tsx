@@ -1,5 +1,7 @@
 import { Header } from "components/Header";
 import { Navigator } from "components/Navigator";
+import { Card } from "components/Card";
+import { Stack } from "components/Stack";
 import "./project.css";
 import { issues } from "data/issues.js";
 
@@ -29,6 +31,19 @@ const menu = [
 ];
 
 export const Project = () => {
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date
+      .toLocaleString([], {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+      .toString();
+  };
+
   return (
     <div>
       <Header user={{ name: "User" }} onLogout={() => {}} />
@@ -37,11 +52,14 @@ export const Project = () => {
         <div className="project">
           <h3>Issues</h3>
           {issues.map((issue) => (
-            <>
-              <h3>{issue.title}</h3>
+            <Card>
+              <Stack direction="row" justifyContent="space-between">
+                <h3>{issue.title}</h3>
+                <small>{formatDate(issue.createdAt)}</small>
+              </Stack>
               <p>{issue.content}</p>
               <p>{issue.status}</p>
-            </>
+            </Card>
           ))}
         </div>
       </div>

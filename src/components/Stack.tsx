@@ -5,6 +5,7 @@ interface StackProps {
   direction?: "row" | "column";
   wrap?: "wrap" | "nowrap";
   spacing?: number;
+  justifyContent?: "flex-start" | "flex-end" | "center" | "space-between";
 }
 
 export const Stack = ({
@@ -12,12 +13,14 @@ export const Stack = ({
   direction = "row",
   wrap = "wrap",
   spacing = 2,
+  justifyContent,
 }: StackProps) => {
   const style2 = {
     display: "flex",
     gap: `${spacing * 0.3}rem`,
     flexWrap: wrap,
     flexDirection: direction,
+    justifyContent: justifyContent,
   };
 
   return <div style={style2}>{children}</div>;
