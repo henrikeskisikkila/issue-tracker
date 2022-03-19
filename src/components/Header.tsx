@@ -1,5 +1,4 @@
-import React from "react";
-
+import { Input } from "components/Input";
 import { Button } from "./Button";
 import "./header.css";
 import Logo from "assets/logo.svg";
@@ -11,14 +10,18 @@ type User = {
 interface HeaderProps {
   user?: User;
   onLogout: () => void;
+  onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Header = ({ user, onLogout }: HeaderProps) => (
+export const Header = ({ user, onLogout, onSearch }: HeaderProps) => (
   <header>
     <div className="wrapper">
       <div>
         <img src={Logo} alt="Log" />
         <h1>Issue Tracker</h1>
+      </div>
+      <div>
+        <Input type={"text"} placeholder={"Search"} onChange={onSearch} />
       </div>
       <div>
         {user ? (

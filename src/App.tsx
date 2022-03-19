@@ -31,7 +31,7 @@ const menu = [
 function App() {
   return (
     <div>
-      <Header user={{ name: "User" }} onLogout={() => {}} />
+      <Header user={{ name: "User" }} onSearch={() => {}} onLogout={() => {}} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
       </div>
