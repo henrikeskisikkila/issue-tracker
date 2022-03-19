@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { AddIssue } from "pages/AddIssue";
 import { Header } from "components/Header";
 import { Navigator } from "components/Navigator";
+import { Button } from "components/Button";
 import { Card } from "components/Card";
 import { Stack } from "components/Stack";
 import { StatusButton } from "components/StatusButton";
@@ -32,6 +35,21 @@ const menu = [
 ];
 
 export const Project = () => {
+  const [newIssue, setNewIssue] = useState(false);
+
+  const showNewIssue = () => {
+    console.log("ShowAddIssue");
+    setNewIssue(true);
+  };
+
+  const onSave = () => {
+    setNewIssue(false);
+  };
+
+  const showAddIssue = () => {
+    return <AddIssue onSave={onSave} />;
+  };
+
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
     return date
@@ -45,26 +63,41 @@ export const Project = () => {
       .toString();
   };
 
+  const showIssues = () => {
+    return (
+      <div className="project">
+        <Stack justifyContent="space-between">
+          <h3 className="header">Issues</h3>
+          <Button
+            primary={true}
+            size={"small"}
+            label={"New Issue"}
+            onClick={showNewIssue}
+          />
+        </Stack>
+
+        {issues.map((issue) => (
+          <Card>
+            <Stack direction="row" justifyContent="space-between">
+              <h3>{issue.title}</h3>
+              <small>Created: {formatDate(issue.createdAt)}</small>
+            </Stack>
+            <p>{issue.content}</p>
+            <p>
+              <StatusButton issueId={issue.id} status={issue.status} />
+            </p>
+          </Card>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div>
       <Header user={{ name: "User" }} onSearch={() => {}} onLogout={() => {}} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
-        <div className="project">
-          <h3 className="header">Issues</h3>
-          {issues.map((issue) => (
-            <Card>
-              <Stack direction="row" justifyContent="space-between">
-                <h3>{issue.title}</h3>
-                <small>Created: {formatDate(issue.createdAt)}</small>
-              </Stack>
-              <p>{issue.content}</p>
-              <p>
-                <StatusButton issueId={issue.id} status={issue.status} />
-              </p>
-            </Card>
-          ))}
-        </div>
+        {newIssue ? showAddIssue() : showIssues()}
       </div>
     </div>
   );
