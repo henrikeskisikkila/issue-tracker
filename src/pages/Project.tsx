@@ -6,43 +6,20 @@ import { Button } from "components/Button";
 import { Card } from "components/Card";
 import { Stack } from "components/Stack";
 import { StatusButton } from "components/StatusButton";
+import { Issue } from "types";
+import { menu } from "config";
 import "./project.css";
 import { issues } from "data/issues.js";
-
-const menu = [
-  {
-    item: {
-      label: "Projects",
-    },
-    subItems: [
-      {
-        label: "Project 1",
-        link: "#",
-      },
-      {
-        label: "Project 2",
-        link: "#",
-      },
-    ],
-  },
-  {
-    item: {
-      label: "Settings",
-      link: "#",
-    },
-    subItems: [],
-  },
-];
 
 export const Project = () => {
   const [newIssue, setNewIssue] = useState(false);
 
   const showNewIssue = () => {
-    console.log("ShowAddIssue");
     setNewIssue(true);
   };
 
-  const onSave = () => {
+  const onSave = (issue: Issue) => {
+    console.log("Save a new issue", issue);
     setNewIssue(false);
   };
 

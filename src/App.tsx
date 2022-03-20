@@ -1,32 +1,8 @@
 import React from "react";
 import { Header } from "./components/Header";
 import { Navigator } from "./components/Navigator";
+import { menu } from "config";
 import "./App.css";
-
-const menu = [
-  {
-    item: {
-      label: "Projects",
-    },
-    subItems: [
-      {
-        label: "Project 1",
-        link: "#",
-      },
-      {
-        label: "Project 2",
-        link: "#",
-      },
-    ],
-  },
-  {
-    item: {
-      label: "Settings",
-      link: "#",
-    },
-    subItems: [],
-  },
-];
 
 function App() {
   return (
