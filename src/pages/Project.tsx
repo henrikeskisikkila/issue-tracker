@@ -15,10 +15,6 @@ import { formatDate } from "services/format";
 export const Project = () => {
   const [newIssue, setNewIssue] = useState(false);
 
-  const showNewIssue = () => {
-    setNewIssue(true);
-  };
-
   const onSave = (issue: Issue) => {
     console.log("Save a new issue", issue);
     setNewIssue(false);
@@ -37,7 +33,7 @@ export const Project = () => {
             primary={true}
             size={"small"}
             label={"New Issue"}
-            onClick={showNewIssue}
+            onClick={() => setNewIssue(true)}
           />
         </Stack>
 
