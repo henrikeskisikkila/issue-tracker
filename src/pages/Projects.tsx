@@ -2,22 +2,38 @@ import { useState } from "react";
 import { Header } from "components/Header";
 import { Navigator } from "components/Navigator";
 import { menu } from "config";
+import { Stack } from "components/Stack";
+import { Button } from "components/Button";
 import { Table } from "components/Table";
 import { Project } from "types";
+import { AddProject } from "pages/AddProject";
 import { projects } from "data/projects";
 import { formatDate } from "services/format";
+import "./projects.css";
 
 export const Projects = () => {
-  const [newProject, setNewProject] = useState(true);
+  const [addProject, setAddProject] = useState(false);
 
-  const showNewProject = () => {
-    return <>Add a new project</>;
+  const saveProject = (project: Project) => {
+    console.log("Save project", project);
+    setAddProject(false);
   };
 
   const listProjects = () => {
     const data = projectData(projects);
     return (
-      <Table headers={["Project Name", "Create Date", "Owner"]} rows={data} />
+      <div className="projects">
+        <Stack justifyContent="space-between">
+          <h3 className="header">Projects</h3>
+          <Button
+            primary={true}
+            size={"small"}
+            label={"Add project"}
+            onClick={() => setAddProject(true)}
+          />
+        </Stack>
+        <Table headers={["Project Name", "Create Date", "Owner"]} rows={data} />
+      </div>
     );
   };
 
@@ -33,7 +49,7 @@ export const Projects = () => {
       <Header user={{ name: "User" }} onSearch={() => {}} onLogout={() => {}} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
-        {newProject ? listProjects() : showNewProject()}
+        {addProject ? <AddProject onSave={saveProject} /> : listProjects()}
       </div>
     </div>
   );
