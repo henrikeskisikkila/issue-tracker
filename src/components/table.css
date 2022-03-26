@@ -1,11 +1,14 @@
 table {
   width: 100%;
+  height: fit-content;
+  margin: 0.9rem;
   border-collapse: collapse;
+  font-size: 0.9rem;
 }
 
 td,
 th {
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
   padding: 0.6rem;
 }

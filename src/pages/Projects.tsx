@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Header } from "components/Header";
 import { Navigator } from "components/Navigator";
 import { menu } from "config";
+import { Table } from "components/Table";
+import { Project } from "types";
 import { projects } from "data/projects";
+import { formatDate } from "services/format";
 
 export const Projects = () => {
   const [newProject, setNewProject] = useState(true);
@@ -12,7 +15,17 @@ export const Projects = () => {
   };
 
   const listProjects = () => {
-    return <>List of projects</>;
+    const data = projectData(projects);
+    return (
+      <Table headers={["Project Name", "Create Date", "Owner"]} rows={data} />
+    );
+  };
+
+  const projectData = (projects: Project[]) => {
+    const data = projects.map((project) => {
+      return [project.name, formatDate(project.createdAt), project.createdBy];
+    });
+    return data;
   };
 
   return (

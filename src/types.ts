@@ -3,3 +3,9 @@ export interface Issue {
   content: string;
 }
 
+export interface Project {
+  id: string;
+  name: string;
+  createdBy: string;
+  createdAt: string;
+}

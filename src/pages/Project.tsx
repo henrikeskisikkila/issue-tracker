@@ -10,6 +10,7 @@ import { Issue } from "types";
 import { menu } from "config";
 import "./project.css";
 import { issues } from "data/issues.js";
+import { formatDate } from "services/format";
 
 export const Project = () => {
   const [newIssue, setNewIssue] = useState(false);
@@ -25,19 +26,6 @@ export const Project = () => {
 
   const showAddIssue = () => {
     return <AddIssue onSave={onSave} />;
-  };
-
-  const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    return date
-      .toLocaleString([], {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-      .toString();
   };
 
   const showIssues = () => {
