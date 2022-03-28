@@ -4,7 +4,7 @@ export interface Issue {
 }
 
 export interface Project {
-  id: string;
+  id: string | undefined;
   name: string;
   createdBy: string;
   createdAt: string;
