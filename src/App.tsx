@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Header } from "./components/Header";
+import { MainHeader } from "pages/MainHeader";
 import { Navigator } from "./components/Navigator";
 import { menu } from "config";
 import "./App.css";
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <Header user={{ name: "User" }} onSearch={() => {}} onLogout={onLogout} />
+      <MainHeader />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
       </div>

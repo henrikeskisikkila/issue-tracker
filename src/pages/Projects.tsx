@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "components/Header";
+import { MainHeader } from "pages/MainHeader";
 import { Navigator } from "components/Navigator";
 import { menu } from "config";
 import { Stack } from "components/Stack";
@@ -46,7 +46,7 @@ export const Projects = () => {
 
   return (
     <div>
-      <Header user={{ name: "User" }} onSearch={() => {}} onLogout={() => {}} />
+      <MainHeader />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
         {addProject ? <AddProject onSave={saveProject} /> : listProjects()}

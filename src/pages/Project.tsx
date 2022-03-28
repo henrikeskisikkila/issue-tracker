@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AddIssue } from "pages/AddIssue";
-import { Header } from "components/Header";
+import { MainHeader } from "pages/MainHeader";
 import { Navigator } from "components/Navigator";
 import { Button } from "components/Button";
 import { Card } from "components/Card";
@@ -55,7 +55,7 @@ export const Project = () => {
 
   return (
     <div>
-      <Header user={{ name: "User" }} onSearch={() => {}} onLogout={() => {}} />
+      <MainHeader />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Navigator menu={menu} />
         {newIssue ? showAddIssue() : showIssues()}
