@@ -22,7 +22,9 @@ interface NavigatorProps {
 const submenu = (item: Item, subItems: Item[]) => {
   return (
     <>
-      <li className="menu-header">{item.label}</li>
+      <li className="menu-header">
+        <a href={item?.link || "#"}>{item.label}</a>
+      </li>
       {subItems.map((item) => (
         <li className="menu-subitem">
           <a href={item.link}>{item.label}</a>

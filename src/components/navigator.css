@@ -17,8 +17,12 @@
 }
 
 .menu-header {
-  color: #1ea7fd;
   padding: 1rem 2rem 1rem 2rem;
+}
+
+.menu-header a {
+  text-decoration: none;
+  color: #1ea7fd;
   font-weight: 700;
   font-size: 1rem;
 }

@@ -2,15 +2,16 @@ export const menu = [
   {
     item: {
       label: "Projects",
+      link: "/projects"
     },
     subItems: [
       {
         label: "Project 1",
-        link: "#",
+        link: "/project/1",
       },
       {
         label: "Project 2",
-        link: "#",
+        link: "/project/2",
       },
     ],
   },
