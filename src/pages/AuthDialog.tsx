@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog } from "components/Dialog";
 import { Stack } from "components/Stack";
 import Logo from "assets/logo.svg";
@@ -12,8 +13,11 @@ interface AuthDialogProps {
 }
 
 export const AuthDialog: React.FC<AuthDialogProps> = ({ open, header }) => {
+  const navigate = useNavigate();
+
   const login = () => {
     console.log("login");
+    navigate("/");
   };
 
   const [email, setEmail] = useState("");
